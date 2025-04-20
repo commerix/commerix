@@ -1,27 +1,27 @@
-# Padrões de Projeto
+# Design Standards
 
-Este documento descreve os padrões adotados no desenvolvimento do projeto Commerix para garantir consistência e qualidade.
+This document describes the standards adopted in the development of the Commerix project to ensure consistency and quality.
 
 ## Conventional Commits
 
-Utilizamos o padrão [Conventional Commits](https://www.conventionalcommits.org/) para mensagens de commit. Este padrão ajuda a criar um histórico de commits claro e estruturado. Exemplos de mensagens de commit:
+We use the [Conventional Commits](https://www.conventionalcommits.org/) standard for commit messages. This standard helps create a clear and structured commit history. Examples of commit messages:
 
-- `feat: adiciona nova funcionalidade ao sistema`
-- `fix: corrige bug no módulo de autenticação`
-- `docs: atualiza documentação do projeto`
+- `feat: adds new functionality to the system`
+- `fix: fixes bug in the authentication module`
+- `docs: updates project documentation`
 
 ## GitFlow
 
-Adotamos o fluxo de trabalho [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) para gerenciar branches e merges. As principais branches são:
+We adopt the [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) workflow to manage branches and merges. The main branches are:
 
-- `main`: Contém o código de produção.
-- `develop`: Contém o código em desenvolvimento.
-- Branches de feature, hotfix e release são criadas a partir de `develop` ou `main`, conforme necessário.
+- `main`: Contains production code.
+- `develop`: Contains code under development.
+- Feature, hotfix, and release branches are created from `develop` or `main`, as needed.
 
 ## SemVer
 
-O versionamento do projeto segue o padrão [SemVer](https://semver.org/) (Versionamento Semântico), no formato `MAJOR.MINOR.PATCH`:
+The project versioning follows the [SemVer](https://semver.org/) (Semantic Versioning) standard, in the format `MAJOR.MINOR.PATCH`:
 
-- **MAJOR**: Alterações incompatíveis com versões anteriores.
-- **MINOR**: Novas funcionalidades compatíveis com versões anteriores.
-- **PATCH**: Correções de bugs compatíveis com versões anteriores.
+- **MAJOR**: Changes incompatible with previous versions.
+- **MINOR**: New features compatible with previous versions.
+- **PATCH**: Bug fixes compatible with previous versions.

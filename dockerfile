@@ -1,20 +1,20 @@
-# Use the official Node.js image
-FROM node:18
+FROM php:8.1-fpm
 
-# Set the working directory inside the container
-WORKDIR /app
+# Instala dependências
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zip \
+    git \
+    unzip \
+    curl \
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    && docker-php-ext-install pdo pdo_mysql zip
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Instala Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Install project dependencies
-RUN npm install
-
-# Copy all project files
-COPY . .
-
-# Expose the port that React will use
-EXPOSE 3000
-
-# Command to start the React development server
-CMD ["npm", "start"]
+WORKDIR /var/www/html

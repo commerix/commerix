@@ -1,13 +1,17 @@
 services:
   laravel:
-    image: php:8.1-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: laravel
     ports:
       - "9000:9000"
     volumes:
-      - ./laravel:/var/www/html
+    - .:/var/www/html
+    depends_on:
+    - mysql
     environment:
-      - PHP_FPM_LISTEN=9000
+      PHP_FPM_LISTEN: "9000"
 
   react:
     build:

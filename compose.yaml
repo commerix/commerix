@@ -10,13 +10,16 @@ services:
       - PHP_FPM_LISTEN=9000
 
   react:
-    image: node:18
+    build:
+      context: ./react
     container_name: react
     ports:
       - "3000:3000"
     volumes:
       - ./react:/app
+    working_dir: /app
 
+    
   mysql:
     image: mysql:8.0
     container_name: mysql
